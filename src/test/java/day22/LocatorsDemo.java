@@ -14,6 +14,7 @@ public class LocatorsDemo {
         WebDriver driver= new ChromeDriver();
         driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
         driver.manage().window().maximize();
+
         //Thread.sleep(3000);
         //Locator id
         //WebElement login = driver.findElement(By.id("login1"));
