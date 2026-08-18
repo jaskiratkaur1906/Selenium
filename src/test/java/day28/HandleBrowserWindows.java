@@ -20,11 +20,31 @@ public class HandleBrowserWindows {
         driver.findElement((By.xpath("//a[normalize-space()='OrangeHRM, Inc']"))).click();
         Set<String> windowIds = driver.getWindowHandles();
 
-        //Approch1
-        List<String> windowList = new ArrayList(windowIds);
+        //Approach1 (for 2-3 browser windows)
+        /*List<String> windowList = new ArrayList(windowIds);
         String parentID= windowList.get(0);
         String childID = windowList.get(1);
 
+        System.out.println(driver.getTitle()); // will give title of parent window even though it is on child window
+
+        //switch to child window
+        driver.switchTo().window(childID);
+        System.out.println(driver.getTitle());
+
+        //switch back to parent window
+        driver.switchTo().window(parentID);
+        System.out.println(driver.getTitle());
+        */
+
+        //Approach2 (for multiple window ids)
+        for(String winID: windowIds ){
+            String title = driver.switchTo().window(winID).getTitle();
+            if(title.equals("OrangeHRM")){
+                System.out.println(driver.getCurrentUrl());
+                //some validations on the parent window
+            }
+
+        }
 
 
 
