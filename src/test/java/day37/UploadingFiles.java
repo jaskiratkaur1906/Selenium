@@ -43,10 +43,5 @@ public class UploadingFiles {
         else {
             System.out.println("files name not matching");
         }
-
-
-
-
-
     }
 }
