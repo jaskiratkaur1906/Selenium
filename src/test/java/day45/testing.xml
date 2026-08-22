@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="5" name="All Test Suite" parallel="tests">
+    <test name="edgetest">
+        <parameter name="browser" value="edge"></parameter>
+        <classes>
+            <class name="day45.ParallelTestingDemo">
+                <methods>
+                    <include name="testLogo"/>
+                    <include name="testTitle"/>
+                    <include name="testURL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="chrometest">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="day45.ParallelTestingDemo">
+                <methods>
+                    <include name="testLogo"/>
+                    <include name="testTitle"/>
+                    <include name="testURL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>
